@@ -36,7 +36,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.1",
-    "@babel/runtime-corejs3": "^7.12.1"
+    "@babel/runtime-corejs3": "^7.12.1",
+    "express": "^5.0.0-alpha.8"
   },
   "browserslist": [
     "defaults"

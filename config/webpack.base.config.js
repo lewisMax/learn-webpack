@@ -9,8 +9,8 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          // babel-loader 支持缓存转换出的结果
-          // 使用 cacheDirectory 选项将 babel-loader 的速度提高2倍
+          // 开启babel缓存
+          // 第二次构建时，会读取之前的缓存
           cacheDirectory: true
         }
       },
