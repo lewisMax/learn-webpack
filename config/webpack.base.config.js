@@ -6,13 +6,19 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        options: {
-          // babel-loader 支持缓存转换出的结果
-          // 使用 cacheDirectory 选项将 babel-loader 的速度提高2倍
-          cacheDirectory: true
-        }
+        // 开启多进程打包。进程开启时间大概为600ms，进程通信也有开销，有利有弊。
+        use: [
+          'thread-loader',
+          {
+            loader: 'babel-loader',
+            options: {
+              // babel-loader 支持缓存转换出的结果
+              // 使用 cacheDirectory 选项将 babel-loader 的速度提高2倍
+              cacheDirectory: true
+            }
+          }
+        ],
+        exclude: /node_modules/
       },
       {
         test: /\.(png|svg|jpe?g|gif|webp)$/i,
@@ -48,5 +54,9 @@ module.exports = {
         collapseWhitespace: true
       }
     })
-  ]
+  ],
+  externals: {
+    // 忽略库名: npm包名
+    // https://webpack.docschina.org/configuration/externals/
+  }
 }

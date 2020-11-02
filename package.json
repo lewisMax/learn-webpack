@@ -28,6 +28,7 @@
     "sass": "^1.28.0",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",
+    "thread-loader": "^3.0.1",
     "url-loader": "^4.1.1",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
