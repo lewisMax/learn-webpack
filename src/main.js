@@ -13,4 +13,5 @@ let obj = {
 console.log(obj.name)
 console.log(obj?.meta?.age)
 console.log(NaN ?? 'haah')
-import('./test').then(console.log)
+// code split
+import(/* webpackChunkName: 'test' */'./test').then(console.log)

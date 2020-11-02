@@ -42,6 +42,11 @@ const prodConfig = {
       filename: 'css/index.[contenthash:10].bundle.css'
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   mode: 'production',
   devtool: 'nosources-source-map'
 }
